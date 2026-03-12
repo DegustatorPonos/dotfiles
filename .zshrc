@@ -10,6 +10,21 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="kennethreitz"
 
+# Set up your preferecnes here. This will enable certain features of zsh
+# that I needed at one time or the other
+
+# This enables some aliases that fix WSL bugs
+wsl_conf=1
+
+# This adds RPI PICO SDK in the path. Only enable if you have it installed
+pico_dev=0
+
+# This adds emsdk and wabt to the path. 
+wasm_dev=1
+
+# Adds SDKMAN to path
+sdkman_dev=0
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -102,3 +117,27 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cls="clear; ls"
+alias :q="exit"
+export PATH="$HOME/go/bin:$PATH"
+
+if [ $wsl_conf -eq 1 ]; then
+    alias zig_debug="zig build && lldb zig-out/bin/*"
+fi
+if [ $pico_dev -eq 1 ]; then
+    export PICO_SDK_PATH=$HOME/pico/pico-sdk
+fi
+
+
+# WASM development
+if [ $wasm_dev -eq 1 ]; then
+    export PATH="$HOME/emsdk:$HOME/emsdk/upstream/emscripten:$PATH"
+    export PATH="$HOME/bin/wabt/build:$PATH"
+fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+if [ $wasm_dev -eq 1 ]; then
+    export SDKMAN_DIR="$HOME/.sdkman"
+    [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+fi
+

@@ -32,34 +32,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- require('lspconfig').gopls.setup({})
 vim.lsp.enable('gopls')
 -- require('lspconfig').ts_ls.setup({})
 vim.lsp.enable('ts_ls')
--- require('lspconfig').rust_analyzer.setup({})
 vim.lsp.enable('rust_analyzer')
--- require('lspconfig').html.setup({})
 vim.lsp.enable('html')
--- require('lspconfig').cssls.setup({})
 vim.lsp.enable('cssls')
--- require('lspconfig').clangd.setup({})
 vim.lsp.enable('clangd')
--- require('lspconfig').bashls.setup({})
 vim.lsp.enable('bashls')
--- require('lspconfig').jsonls.setup({})
 vim.lsp.enable('jsonls')
--- require('lspconfig').sqls.setup({})
 vim.lsp.enable('sqls')
--- require('lspconfig').zls.setup({})
 vim.lsp.enable('zls')
--- require('lspconfig').csharp_ls.setup({})
 vim.lsp.enable('csharp_ls')
--- require('lspconfig').jdtls.setup({})
 vim.lsp.enable('jdtls')
--- require('lspconfig').vscode_spring_boot_tools.setup({})
--- require('lspconfig').prettier.setup({})
--- require('lspconfig').templ.setup({})
--- require('lspconfig').gleam.setup({})
 
 local cmp = require('cmp')
 
@@ -78,4 +63,13 @@ cmp.setup({
 	['<Tab>'] = cmp.mapping.confirm({ select = false }),
 	['<Enter>'] = cmp.mapping.confirm({ select = false }),
   }),
+})
+
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = false,
+  float = true,
 })

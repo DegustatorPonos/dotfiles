@@ -22,7 +22,10 @@ vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz',  { noremap = true, silent = tru
 vim.api.nvim_set_keymap('n', '<C-j>', ':cnext<CR>',  { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-k>', ':cprev<CR>',  { noremap = true, silent = true })
 
+
 vim.api.nvim_set_keymap('n', '<leader>t', ':Themery<CR>',  { noremap = true, silent = true })
 
 vim.keymap.set("n", "<C-t>t", ToggleVisibility)
 vim.keymap.set("n", "<C-t><C-t>", ToggleVisibility)
+
+vim.keymap.set('t', '<esc>', [[<C-\><C-n>]])

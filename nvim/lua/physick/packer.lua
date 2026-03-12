@@ -1,34 +1,63 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.8',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
+        requires = { 
+            {'nvim-lua/plenary.nvim'},
+            { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+        }
+    }
 
-	-- Colorscheme
-	use({
-		"neanias/everforest-nvim",
-		-- Optional; default configuration will be used if setup isn't called.
-		config = function()
-			require("everforest").setup()
-		end,
-	})
+    -- Colorschemes
+    use({
+        "neanias/everforest-nvim",
+        -- Optional; default configuration will be used if setup isn't called.
+        config = function()
+            require("everforest").setup()
+        end,
+    })
+    use {"xero/miasma.nvim"}
+    use {"leobeosab/tearout.nvim"}
+    use {"armannikoyan/rusty"}
+    use {"ellisonleao/gruvbox.nvim"}
+    use {"RRethy/base16-nvim"}
 
-	-- Treesitter
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    -- Treesitter
+    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
-	-- Status bar. Does not go so well with the colorscheme so IDK
-	-- use( 'vim-airline/vim-airline' )
-	
-	-- LSP (god i hate to do it)
-	use({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
-	use({'neovim/nvim-lspconfig'})
-	use({'hrsh7th/nvim-cmp'})
-	use({'hrsh7th/cmp-nvim-lsp'})	
-	use({'williamboman/mason.nvim'})	
-	use({'williamboman/mason-lspconfig.nvim'})	
+    -- Status bar. Does not go so well with the colorscheme so IDK
+    -- use( 'vim-airline/vim-airline' )
+
+    -- LSP (god i hate to do it)
+    use({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
+    use({'neovim/nvim-lspconfig'})
+    use({'hrsh7th/nvim-cmp'})
+    use({'hrsh7th/cmp-nvim-lsp'})
+    use({'williamboman/mason.nvim'})
+    use({'williamboman/mason-lspconfig.nvim'})
+
+    use({'uga-rosa/ccc.nvim'})
+
+    use({'sahaj-b/brainrot.nvim'})
+
+
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    }
+
+    use({'zaldih/themery.nvim'})
+
+    use {
+        "startup-nvim/startup.nvim",
+        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim"},
+        config = function()
+            require"startup".setup()
+        end
+    }
 end)
