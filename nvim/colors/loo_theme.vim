@@ -1,6 +1,6 @@
 hi clear
 syntax reset
-let g:colors_name = "mycolorscheme"
+let g:colors_name = "loo_theme"
 set background=dark
 set t_Co=256
 hi Normal guifg=#d8cdc7 ctermbg=NONE guibg=#27221f gui=NONE
