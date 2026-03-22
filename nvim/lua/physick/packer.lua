@@ -13,13 +13,13 @@ return require('packer').startup(function(use)
     }
 
     -- Colorschemes
-    use({
-        "neanias/everforest-nvim",
-        -- Optional; default configuration will be used if setup isn't called.
-        config = function()
-            require("everforest").setup()
-        end,
-    })
+    -- use({
+        -- "neanias/everforest-nvim",
+        -- -- Optional; default configuration will be used if setup isn't called.
+        -- config = function()
+            -- require("everforest").setup()
+        -- end,
+    -- })
     use {"xero/miasma.nvim"}
     use {"leobeosab/tearout.nvim"}
     use {"armannikoyan/rusty"}
@@ -60,4 +60,6 @@ return require('packer').startup(function(use)
             require"startup".setup()
         end
     }
+
+    use '/home/physick/git/nvim_physicolors'
 end)

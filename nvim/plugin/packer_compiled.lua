@@ -94,12 +94,6 @@ _G.packer_plugins = {
     path = "/home/physick/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
-  ["everforest-nvim"] = {
-    config = { "\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15everforest\frequire\0" },
-    loaded = true,
-    path = "/home/physick/.local/share/nvim/site/pack/packer/start/everforest-nvim",
-    url = "https://github.com/neanias/everforest-nvim"
-  },
   ["gruvbox.nvim"] = {
     loaded = true,
     path = "/home/physick/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
@@ -144,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/physick/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  nvim_physicolors = {
+    loaded = true,
+    path = "/home/physick/.local/share/nvim/site/pack/packer/start/nvim_physicolors",
+    url = "/home/physick/git/nvim_physicolors"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -194,10 +193,6 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: everforest-nvim
-time([[Config for everforest-nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15everforest\frequire\0", "config", "everforest-nvim")
-time([[Config for everforest-nvim]], false)
 -- Config for: startup.nvim
 time([[Config for startup.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fstartup\frequire\0", "config", "startup.nvim")
