@@ -42,7 +42,7 @@ return require('packer').startup(function(use)
 
     use({'uga-rosa/ccc.nvim'})
 
-    use({'sahaj-b/brainrot.nvim'})
+    use({'jiaoshijie/undotree'})
 
 
     use {
