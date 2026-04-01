@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
     use {"RRethy/base16-nvim"}
 
     -- Treesitter
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+    use { 'nvim-treesitter/nvim-treesitter', tag = 'main', build = ':TSUpdate' } 
 
     -- Status bar. Does not go so well with the colorscheme so IDK
     -- use( 'vim-airline/vim-airline' )
