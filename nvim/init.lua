@@ -10,3 +10,4 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 require("physick")
 require("config.lazy")
+
