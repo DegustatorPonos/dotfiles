@@ -3,11 +3,21 @@ vim.g.loaded_netrw = 1
 require("oil").setup({
     default_file_explorer = true,
     use_default_keymaps = true,
+    view_options = {
+        show_hidden = true,
+    },
+    columns = {
+        "permissions",
+        "size",
+        "mtime",
+        "icon",
+    },
 })
 
 vim.api.nvim_create_user_command("Explore", "Oil <args>", { nargs = "?", complete = "dir" })
 vim.api.nvim_create_user_command("E", "Explore <args>", { nargs = "?", complete = "dir" })
 
+-- :Sex! and :Sex comands
 vim.api.nvim_create_user_command("Sexplore", function(opts)
     local cmd = opts.bang and "topleft vsplit" or "topleft split"
     vim.cmd(cmd)
