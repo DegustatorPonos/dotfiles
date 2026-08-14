@@ -38,14 +38,24 @@ vim.lsp.enable('ts_ls')
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('html')
 vim.lsp.enable('cssls')
+
 vim.lsp.enable('clangd')
+
 vim.lsp.enable('bashls')
 vim.lsp.enable('jsonls')
 vim.lsp.enable('sqls')
 vim.lsp.enable('zls')
 vim.lsp.enable('csharp_ls')
-vim.lsp.enable('jdtls')
+-- vim.lsp.enable('jdtls')
+vim.lsp.enable('jls')
 
+vim.lsp.config('clangd', {
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--query-driver=/usr/bin/g++",
+  },
+})
 local cmp = require('cmp')
 
 cmp.setup({
